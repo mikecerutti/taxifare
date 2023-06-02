@@ -5,7 +5,7 @@ import datetime as datetime
 # Taxi Fare Prediction
 """
 
-pu_date = st.date_input('Pick-up Date', value=date.today())
+pu_date = st.date_input('Pick-up Date', value=datetime.today())
 pu_time = st.time_input('Pick-up Time', value=datetime.time(12))
 pu_lat = st.number_input('Pick-up Latitude', value=40.165220)
 pu_long = st.number_input('Pick-up Longitude', value=-83.062350)
