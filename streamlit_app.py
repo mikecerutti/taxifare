@@ -12,3 +12,7 @@ pu_long = st.number_input('Pick-up Longitude', value=-83.062350)
 du_lat = st.number_input('Drop-off Latitude', value=39.997520)
 du_long = st.number_input('Drop-off Longitude', value=83.004260)
 nb_px = st.number_input('Passenger Count', value=1, min_value=1, max_value=12)
+
+
+if st.button('Calculate'):
+    print("Hello World")
