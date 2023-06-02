@@ -29,4 +29,8 @@ if st.button('Calculate'):
     response = requests.get(url, params=predict_dict)
     calc_fare = response.json()['fare']
 
-st.header(f"Calculated fare: ${calc_fare:.2f}")
+if calc_fare is not None:
+    formatted_fare = "${:.2f}".format(calc_fare)
+    st.header(f"Calculated fare: {formatted_fare}")
+else:
+    st.header("Calculated fare: N/A")
