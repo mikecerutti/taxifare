@@ -18,7 +18,7 @@ calc_fare = None  # Default value
 if st.button('Calculate'):
     st.write(pu_date & pu_time)
     url="https://taxifare.lewagon.ai/predict?"
-    predict_dict={'pickup_datetime':pu_date & pu_time, 'pickup_longitude':pu_long, 'pickup_latitude':pu_lat, 'dropoff_longitude':do_long,'dropoff_latitude':do_lat, 'passenger_count':nb_px}
+    predict_dict={'pickup_datetime':pu_date & " " & pu_time, 'pickup_longitude':pu_long, 'pickup_latitude':pu_lat, 'dropoff_longitude':do_long,'dropoff_latitude':do_lat, 'passenger_count':nb_px}
     response=requests.get(url,params=predict_dict)
     calc_fare=response.json()['fare']
 
