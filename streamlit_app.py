@@ -15,9 +15,9 @@ do_long = st.number_input('Drop-off Longitude', value=83.004260)
 nb_px = st.number_input('Passenger Count', value=1, min_value=1, max_value=12)
 
 calc_fare = None  # Default value
+print("test")
 
 if st.button('Calculate'):
-    st.write(pu_date & pu_time)
     url="https://taxifare.lewagon.ai/predict?"
     predict_dict={'pickup_datetime':str(pu_date) + " " + str(pu_time), 'pickup_longitude':pu_long, 'pickup_latitude':pu_lat, 'dropoff_longitude':do_long,'dropoff_latitude':do_lat, 'passenger_count':nb_px}
     response=requests.get(url,params=predict_dict)
