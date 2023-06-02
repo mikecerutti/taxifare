@@ -13,6 +13,7 @@ do_lat = st.number_input('Drop-off Latitude', value=39.997520)
 do_long = st.number_input('Drop-off Longitude', value=83.004260)
 nb_px = st.number_input('Passenger Count', value=1, min_value=1, max_value=12)
 
+calc_fare = None  # Default value
 
 if st.button('Calculate'):
     url="https://taxifare.lewagon.ai/predict?"
