@@ -11,10 +11,10 @@ pu_time = st.time_input('Pick-up Time', value=datetime.time(12))
 pu_lat = st.number_input('Pick-up Latitude', value=40.165220)
 pu_long = st.number_input('Pick-up Longitude', value=-83.062350)
 do_lat = st.number_input('Drop-off Latitude', value=39.997520)
-do_long = st.number_input('Drop-off Longitude', value=-83.004260)
+do_long = st.number_input('Drop-off Longitude', value=-83.004257)
 nb_px = st.number_input('Passenger Count', value=1, min_value=1, max_value=12)
 
-calc_fare = None  # Default value
+calc_fare = 0  # Default value
 
 if st.button('Calculate'):
     url = "https://taxifare.lewagon.ai/predict"
@@ -29,8 +29,5 @@ if st.button('Calculate'):
     response = requests.get(url, params=predict_dict)
     calc_fare = response.json()['fare']
 
-if calc_fare is not None:
     formatted_fare = "${:.2f}".format(calc_fare)
     st.header(f"Calculated fare: {formatted_fare}")
-else:
-    st.header("Calculated fare: N/A")
